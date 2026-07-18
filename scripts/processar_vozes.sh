@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WORKDIR="/home/maicom/Documentos/estudo/programacao/Machine.Learning/perna.longa/vozes/compilado"
+WORKDIR="/home/maicom/Documentos/estudo/programacao/Machine.Learning/perna.longa/fine-tuning-com-pt_BR-faber-medium-voz-perna-long/scripts/"
 INPUT_FILE="${1:-$WORKDIR/sem título.wav}"
 OUTDIR="${OUTDIR:-$WORKDIR/normalizados}"
 

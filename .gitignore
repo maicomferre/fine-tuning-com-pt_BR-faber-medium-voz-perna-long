@@ -1,3 +1,5 @@
 scripts/raw
 scripts/done
-scripts/nomalizados
+scripts/normalizados
+/scripts/*.wav
+scripts/*.log
