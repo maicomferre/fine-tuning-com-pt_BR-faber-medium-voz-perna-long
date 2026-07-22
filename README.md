@@ -16,8 +16,14 @@ Tamanho: ~63.2 MB
 
 
 ### Tempo de audio e qualidade
-- A quantidade de fragmentos até agora é por volta de 200.
-- O tempo total de audio útil ainda é menos que 12 minutos. O ideal é no minimo meia hora.
-- Grande parte dos arquivos estão limpos mas alguns aind apossuí residuo de algum som que ocorreu durante a fala.
-
-
+- Auditoria feita em 2026-07-19 com `ffprobe`/`soxi`.
+- Total atual: **183 arquivos WAV** em `dataset/wav`, batendo com **183 entradas** em `dataset/metadata.csv`.
+- Tempo total de audio atual: **00:09:24,50**.
+- Tempo atualmente dentro dos requisitos mínimos do pipeline: **00:09:19,23**.
+- Requisitos mínimos usados para o `pt_BR-faber-medium`: WAV PCM signed 16-bit (`pcm_s16le`), **mono**, **22050 Hz** e fragmento com pelo menos **1s**.
+- Arquivos que cumprem todos os requisitos mínimos: **177/183**.
+- Arquivos fora do requisito mínimo: **6/183**.
+  - **6** arquivos têm menos de 1s: `fatiado_020`, `fatiado_027`, `fatiado_030`, `fatiado_032`, `fatiado_033`, `fatiado_037`.
+- Todos os arquivos estão em 22050 Hz, mono, PCM 16-bit e todos possuem transcrição não vazia no metadata.
+- O volume ainda está abaixo do ideal para fine-tuning: o alvo mínimo prático continua sendo **30 minutos ou mais** de áudio limpo, mono e em 22050 Hz.
+- Grande parte dos arquivos está limpa, mas alguns ainda podem conter resíduos de som durante a fala; a próxima ação técnica é decidir se os 6 fragmentos abaixo de 1s serão mantidos, unidos a outros trechos ou removidos do metadata.
